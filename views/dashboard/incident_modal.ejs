@@ -1,0 +1,51 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="incident-modal">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Incident Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Priority</h5>
+                <p class="js-incident-data" data-prop="priority"></p>
+
+                <h5>Details</h5>
+                <p class="js-incident-data" data-prop="description"></p>
+
+                <p><a href="#" class="js-edit-incident"><i class="fas fa-edit"></i> Edit details</a></p>
+
+                <h5>Resources Dispatched</h5>
+                <span class="text-muted d-inline-flex align-items-center js-resources-spinner"><i class="far fa-2x fa-life-ring fa-spin mr-2"></i> Loading resources...</span>
+                <div class="incident-resources mb-4">
+
+                </div>
+                <button type="button" class="btn btn-primary" id="js-dispatch-trigger">Dispatch Units</button>
+                <button type="button" class="btn btn-danger" id="js-close-incident">Close Incident</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hide incident-resource card" id="incident-resource-template">
+    <div class="card-body">
+        <span class="js-resource-type"></span><br/>
+        <span class="font-weight-bold js-resource-name"></span><br/>
+        <span class="text-info js-resource-status"></span>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-primary">
+            <a href="#" class="js-resource-next-status text-white"></a>
+        </li>
+        <li class="list-group-item bg-info">
+            <a href="#" class="js-resource-change-status text-white">Change Status</a>
+        </li>
+        <ul class="list-group list-group-flush js-resource-status-list">
+            
+        </ul>
+        <li class="list-group-item bg-danger">
+            <a href="#" class="resource-cancel text-white">Cancel Dispatch</a>
+        </li>
+    </ul>
+</div>

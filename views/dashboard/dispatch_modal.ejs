@@ -1,0 +1,51 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="dispatch-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Dispatch Units</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Select a unit to dispatch and click Add Unit; repeat until you have added all the units you wish
+                to dispatch, then click Dispatch.
+
+                <h4>Selected Units</h4>
+                <div class="dispatch-resources mb-2">
+
+                </div>
+                <hr/>
+
+                <h4>Choose Units</h4>
+                <form class="dispatch-resources-form">
+                    <div class="form-group">
+                        <label for="dispatch-resource-type">Unit Type</label>
+                        <select id="dispatch-resource-type" class="form-control" data-close-on-select="true">
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dispatch-resource">Available Units</label>
+                        <select id="dispatch-resource" class="form-control" data-close-on-select="true">
+                            <option></option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="js-dispatch-add">Add Unit</button>
+                    <button type="button" class="btn btn-success" id="js-dispatch-selected">Dispatch</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hide dispatch-resource" id="dispatch-resource-template">
+    <span class="resource-details">
+        <span class="js-resource-type"></span>
+        <span class="font-weight-bold js-resource-name"></span> &middot;
+        <span class="text-info js-resource-status"></span>
+    </span>
+    <span class="resource-actions">
+        <small><a href="#" class="dispatch-resource-cancel text-danger">Remove</a></small>
+    </span>
+</div>

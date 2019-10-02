@@ -1,0 +1,18 @@
+<div id="main-map"></div>
+
+<div class="search-container">
+    <input type="text" class="form-control search-bar" placeholder="Search for an address..." />
+
+    <div class="search-options">
+        <a href="#" class="search-option" data-option="street"><img src="/images/street.png" height="16" width="16" /> Look up as a street address</a>
+        <a href="#" class="search-option" data-option="w3w"><img src="/images/w3w.png" height="16" width="16" /> Look up as a what3words address</a>
+        <a href="#" class="search-option" data-option="osgrid"><img src="/images/grid.png" height="16" width="16" /> Look up as an OS grid reference</a>
+    </div>
+</div>
+
+<button class="map-type btn btn-default">Toggle satellite/street mapping</button>
+
+<%- include('new_incident_modal') %>
+<%- include('incident_modal') %>
+<%- include('dispatch_modal') %>
+<%- include('edit_incident_modal') %>

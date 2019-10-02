@@ -1,0 +1,36 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="edit-incident-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Incident</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger hide edit-incident-error"></div>
+                <form class="edit-incident-form">
+                    <input type="hidden" id="edit-incident-id" name="id" />
+
+                    <div class="form-group">
+                        <label for="edit-incident-priority">Incident Priority</label>
+                        <select id="edit-incident-priority" class="form-control" name="priority" required>
+                            <option></option>
+                            <option value="1" style="background-color: darkred; color: white;">1: Life Threatening / Highest Priority</option>
+                            <option value="2" style="background-color: darkorange; color: white;">2: Urgent Care / Medium Priority</option>
+                            <option value="3" style="background-color: darkgreen; color: white;">3: Minor Incident / Lower Priority</option>
+                        </select>
+                        <small class="form-text text-danger validation-text">You must select an incident category.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-incident-description">Incident Details</label>
+                        <textarea id="edit-incident-description" name="description" class="form-control" rows="5" cols="100" required></textarea>
+                        <small class="form-text text-danger validation-text">You must provide some details about this incident.</small>
+                    </div>
+
+                    <button type="button" class="edit-incident-submit btn btn-primary">Edit Incident</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+export class Config {
+    database: DbConnectionOptions;
+    port: number;
+    secretKey: string;
+    siteSettings: Array<[string, string]>;
+
+    /**
+     * Create a new configuration instance.
+     * @param database Connection specifications for your application database.
+     * @param port The port on which your application will listen.
+     * @param secretKey A secret key for encryption within your application.
+     * @param siteSettings An array of key-value site settings.
+     */
+    constructor({database, port, secretKey, siteSettings}: {database: DbConnectionOptions, port: number, secretKey: string, siteSettings: Array<[string, string]>}) {
+        this.database = database;
+        this.port = port;
+        this.secretKey = secretKey;
+        this.siteSettings = siteSettings;
+    }
+}
+
+export class DbConnectionOptions {
+    host: string;
+    user: string;
+    password: string;
+    database: string;
+    connectionLimit: number;
+
+    /**
+     * Create a new database connection options instance.
+     * @param host The host on which your database server is running.
+     * @param user The username with which to connect to the database.
+     * @param password The password corresponding to the specified user.
+     * @param database The database to scope the connection to.
+     * @param connectionLimit The maximum number of connections to allow in the connection pool.
+     */
+    constructor({host, user, password, database, connectionLimit}: {host: string, user: string, password: string, database: string, connectionLimit: number}) {
+        this.host = host;
+        this.user = user;
+        this.password = password;
+        this.database = database;
+        this.connectionLimit = connectionLimit;
+    }
+
+    connectionObject() {
+        return {host: this.host, user: this.user, password: this.password, database: this.database, connectionLimit: this.connectionLimit};
+    }
+}

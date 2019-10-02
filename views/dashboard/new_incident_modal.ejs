@@ -1,0 +1,50 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="new-incident-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create Incident</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger hide new-incident-error"></div>
+                <form class="new-incident-form">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="form-group">
+                                <label for="new-incident-lat">Latitude</label>
+                                <input id="new-incident-lat" name="lat" type="number" step="0.00000001" class="form-control" required />
+                                <small class="form-text text-danger validation-text">You must provide a latitude.</small>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="form-group">
+                                <label for="new-incident-lng">Longitude</label>
+                                <input id="new-incident-lng" name="lng" type="number" step="0.00000001" class="form-control" required />
+                                <small class="form-text text-danger validation-text">You must provide a longitude.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-incident-priority">Incident Priority</label>
+                        <select id="new-incident-priority" class="form-control" name="priority" required>
+                            <option></option>
+                            <option value="1" style="background-color: darkred; color: white;">1: Life Threatening / Highest Priority</option>
+                            <option value="2" style="background-color: darkorange; color: white;">2: Urgent Care / Medium Priority</option>
+                            <option value="3" style="background-color: darkgreen; color: white;">3: Minor Incident / Lower Priority</option>
+                        </select>
+                        <small class="form-text text-danger validation-text">You must select an incident category.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-incident-description">Incident Details</label>
+                        <textarea id="new-incident-description" name="description" class="form-control" rows="5" cols="100" required></textarea>
+                        <small class="form-text text-danger validation-text">You must provide some details about this incident.</small>
+                    </div>
+
+                    <button type="button" class="new-incident-submit btn btn-primary">Create Incident</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
